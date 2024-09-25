@@ -27,15 +27,20 @@ auto_bet = False
 
 # NEEDS DETECTION FOR GAME END (blackjack, bust, win, lose)
 class Game:
-    def __init__(self, first_card, dealer_upcard):
-        self.player_hand = [{first_card}]
+    def __init__(self, cards, dealer_upcard):
+        self.player_hand = [cards]
+        self.split_games = []
         self.dealer_upcard = dealer_upcard
         self.double_possible = False
         self.split_possible = False
+        self.first_decision = ""
 
     def new_card(self, card):
         self.player_hand.append(card)
 
+    def make_decision(self):
+        pass
+    
     def hit_or_stand(self):
         player_total = sum(self.player_hand)
         has_ace = 1 in self.player_hand

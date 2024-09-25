@@ -9,8 +9,6 @@ model = YOLO('best.pt')
 decision = {str(i): False for i in range(1, 11)}
 decision.update({"K": False, "Q": False, "J": False})
 
-
-
 img = cv2.imread('test2.png')
 img = cv2.resize(img, (800, 800))
 
